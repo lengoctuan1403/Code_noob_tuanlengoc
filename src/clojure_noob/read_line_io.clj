@@ -18,4 +18,5 @@
                    (println "Gia tri nho nhat la: " (apply min input-list))))))))
 
 (input)
+(input)
 
