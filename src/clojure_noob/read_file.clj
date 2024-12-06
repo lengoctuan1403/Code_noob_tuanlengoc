@@ -1,4 +1,4 @@
-(ns read-file
+(ns clojure-noob.read-file
   (:require [clojure.java.io :refer [reader]]))
 
 
