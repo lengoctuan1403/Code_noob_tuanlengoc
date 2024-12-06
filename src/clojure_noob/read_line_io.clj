@@ -1,10 +1,10 @@
-(ns read-line-io)
+(ns clojure-noob.read-line-io)
 
 (defn input
   []
-  (println "Nhap vao so phan tu: " n
+  (println "Nhap vao so phan tu: " 
   (let [n (Integer/parseInt (read-line))]
-    (println "Nhap vao so phan tu: " n)
+    (println n)
     (loop [i 0
            input-list []]
       (if (< i n)
