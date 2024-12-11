@@ -1,5 +1,6 @@
 (ns clojure-noob.read-line-io)
 
+
 (defn input
   []
   (println "Nhap vao so phan tu: "
@@ -16,7 +17,98 @@
                  (do
                    (println "Gia tri lon nhat la: " (apply max input-list))
                    (println "Gia tri nho nhat la: " (apply min input-list))))))))
+(input)
 
-(input)
-(input)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

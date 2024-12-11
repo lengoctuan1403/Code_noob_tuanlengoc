@@ -9,7 +9,7 @@
           n (-> lines first Integer/parseInt)
           numbers (->> lines rest (take n) (map #(Integer/parseInt %)))]
       (spit "output.txt" "Gia tri lon nhat la ")
-      (spit "output.txt" (apply max numbers) :append true))))      
+      (spit "output.txt" (apply max numbers) :append true))))
 
 (read-input)
 
