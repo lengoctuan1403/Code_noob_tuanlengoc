@@ -1,13 +1,12 @@
 (ns clojure-noob.bubblesort)
 
 
-
+(concat (switch (subvec [10 5 9 76 85 2] 0 2)) (subvec [10 5 9 76 85 2] 2))
 (defn switch
   [a]
   (if (< (a 0) (a 1))
     a
     [(a 1) (a 0)]))
-
 
 
 (concat (switch (subvec [10 5 9 76 85 2] 0 2)) (subvec [10 5 9 76 85 2] 2))
