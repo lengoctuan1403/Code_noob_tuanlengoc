@@ -1,61 +1,40 @@
 (ns clojure-noob.bubblesort)
 
 
-(concat (switch (subvec [10 5 9 76 85 2] 0 2)) (subvec [10 5 9 76 85 2] 2))
+
 (defn switch
   [a]
   (if (< (a 0) (a 1))
     a
     [(a 1) (a 0)]))
+(defn switch-at
 
+  [ls ith]
+  (vec (concat (subvec ls 0 ith)
+               (switch (subvec ls ith (+ ith 2)))
+               (subvec ls (+ ith 2)))))
+(apply max [9 8 7 6 5])
 
-(concat (switch (subvec [10 5 9 76 85 2] 0 2)) (subvec [10 5 9 76 85 2] 2))
-
-  (def ls [5 4 2 5 2])
-(defn bubble-sort
-  []
-  (loop [i0 0
-         i2 2]
-    (if (< i2 (count ls))
+(defn bbsort
+  [ls]
+  (loop [ith 0
+         upd ls]
+    (if (<= (+ ith 2) (count ls))
       (do
-        (println (concat [] (switch (subvec ls i0 i2))))
-        (recur (inc i0) (inc i2))))))
-
-(bubble-sort)
-
-
-(subvec [1 5 9 76 85 2] 0 2)
-
-
-
+        (switch-at upd ith)
+        (recur (inc ith) (replace upd (switch-at upd ith))))
+      (loop [upd2 upd]
+        (if (= (upd2 0) (apply min ls))
+          upd2
+          (do
+            (bbsort upd2)
+            (recur (replace upd2 (bbsort upd2)))))))))
 
 
 
 
-
-(defn add-to-endlist
-  []
-  (let [new-list []]
-    (conj new-list (apply max ds))))
-
-(loop [ds [1 4 5 10 6 3 -2]
-       new-list []]
-  (recur (conj new-list (apply max ds))
-         (remove ds (apply max ds))))
+(bbsort [10 9 8 7 6])
+;; dang bi stack over flow
 
 
-
-
-
-
-
-
-
-
-(defn swap [a] (if (> (a 1) (a 0)) a [(a 1) (a 0)]))
-(defn swap-at
-  [s ith]
-  (vec (concat (subvec s 0 ith)
-               (swap (subvec s ith (+ ith 2)))
-               (subvec s (+ ith 2)))))
-(swap-at [1 3 2] 1)
+(bbsort [2 10 7 6 -3])
