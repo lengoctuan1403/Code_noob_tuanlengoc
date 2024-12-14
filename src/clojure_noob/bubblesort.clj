@@ -13,9 +13,7 @@
   (vec (concat (subvec ls 0 ith)
                (switch (subvec ls ith (+ ith 2)))
                (subvec ls (+ ith 2)))))
-(apply max [9 8 7 6 5])
-
-(defn bbsort
+(defn max-to-end
   [ls]
   (loop [ith 0
          upd ls]
@@ -23,12 +21,34 @@
       (do
         (switch-at upd ith)
         (recur (inc ith) (replace upd (switch-at upd ith))))
-      (loop [upd2 upd]
-        (if (= (upd2 0) (apply min ls))
-          upd2
-          (do
-            (bbsort upd2)
-            (recur (replace upd2 (bbsort upd2)))))))))
+      upd)))
+
+(max-to-end [10 9 8 7 9 87 6 -1000 -2000 0])
+
+(switch-at [10 9 8 7 9 87 6 -1000 -2000 0] 8)
+(count [10 9 8 7 9 87 6 -1000 -2000 0])
+ 
+
+(defn bbsort
+  [ls]
+  (loop [new-ls ls]
+    (if ()
+      new-ls
+      (do
+        ;;(max-to-end ls)
+        (recur (replace new-ls (max-to-end new-ls)))))))
+
+
+
+(bbsort [-2 1 3 1])
+
+
+(loop [upd2 upd]
+  (if (= (upd2 0) (apply min ls))
+    upd2
+    (do
+      (bbsort upd2)
+      (recur (replace upd2 (bbsort upd2))))))
 
 
 
@@ -37,4 +57,3 @@
 ;; dang bi stack over flow
 
 
-(bbsort [2 10 7 6 -3])
