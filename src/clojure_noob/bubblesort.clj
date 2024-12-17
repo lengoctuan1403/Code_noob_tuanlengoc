@@ -11,6 +11,7 @@
   (vec (concat (subvec ls 0 ith)
                (switch (subvec ls ith (+ ith 2)))
                (subvec ls (+ ith 2)))))
+(switch-at [7 9] 0)
 
 (defn max-to-end
   [ls]
