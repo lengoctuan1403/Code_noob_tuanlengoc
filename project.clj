@@ -5,7 +5,6 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.11.1"]]
   :plugins [[cider/cider-nrepl "0.28.5"]]
-  :repl-options {:nrepl-middleware [cider.nrepl/cider-middleware]}
   :main ^:skip-aot clojure-noob.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
