@@ -20,3 +20,5 @@
     (println "Ban" (- 2024 year) "tuoi roi")))
 
 (printrandomname)
+
+(println "Hoan thanh, chuan bi merge")
